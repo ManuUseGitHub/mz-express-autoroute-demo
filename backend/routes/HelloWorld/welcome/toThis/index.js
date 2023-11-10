@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    res.send(`Welcome to this resource ${__dirname.replace(process.cwd(),"")}`);
+    res.send(`Welcome to this resource at FOLDER ${__dirname.replace(process.cwd(),"")}`);
 })
 
-router.get('/how-r-u', async (req, res) => {
-    res.send("Glad you asked! I am fine!");
+router.get('/greet/name/:something', async (req, res) => {
+    res.send(`Sure !! Pleased to meet ;) , ${req.params.something} ! I'm an endpoint defined at FOLDER ${__dirname.replace(process.cwd(),"")}`);
 })
 
 module.exports = router;
